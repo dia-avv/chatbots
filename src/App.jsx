@@ -15,14 +15,11 @@ import RobertMessage from './components/RobertMessage';
 export default function App() {
   return (
     <div>
-      {/*<Angela />
+      <Angela />
       <Pedro />
       <Lilly />
       <Petra />
       <Robert />
-      
-      
-    */}
     <PedroMessage />
     <AngelaMessage />
     <LillyMessage />
