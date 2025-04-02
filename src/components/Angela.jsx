@@ -5,6 +5,8 @@ export default function Angela() {
     const [messages, setMessages] = useState ([]);
     const [input, setInput] = useState("");
 
+    const API_KEY = process.env.REACT_APP_API_KEY;
+
     const chatBoxRef = useRef(null);
 
     useEffect(() => {
@@ -46,7 +48,7 @@ export default function Angela() {
                     },
                     {
                         headers: {
-                            Authorization: `Bearer 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`, //api key
+                            Authorization: `Bearer ${API_KEY}`, //api key
                         },
                     }
                 );
