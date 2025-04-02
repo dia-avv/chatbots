@@ -1,11 +1,14 @@
 import axios from "axios";
 import React, { useEffect, useState, useRef } from "react";
+import send from '../assets/send.svg';
+import back from '../assets/backbutton.svg';
+import robert from '../assets/robert.svg';
 
 export default function Robert() {
     const [messages, setMessages] = useState ([]);
     const [input, setInput] = useState("");
 
-    const API_KEY = process.env.REACT_APP_API_KEY;
+    const API_KEY = import.meta.env.REACT_APP_API_KEY;
 
     const chatBoxRef = useRef(null);
 
@@ -72,12 +75,12 @@ export default function Robert() {
     return (
         <div className="body-robert">
             <div className="back-button">
-                <img src="/src/assets/backbutton.svg" alt="Back" />
+                <img src={back} alt="Back" />
                 <h3>Back to map</h3>
             </div>
             <div className="chat-container">
                 <div className="top-message-robert">
-                    <img src="/src/assets/robert.svg" alt="Robert" />
+                    <img src={robert} alt="Robert" />
                     <h4>My fabulous friend! Any questions for me?</h4>
                 </div>
                 <div className="chat-box" ref={chatBoxRef}>
@@ -104,7 +107,7 @@ export default function Robert() {
                     onChange={(e) => setInput(e.target.value)}
                     placeholder="Type a message to Robert..."
                     />
-                    <button onClick={() => sendMessage(input)}><img src="/src/assets/send.svg" alt="Send" /></button>
+                    <button onClick={() => sendMessage(input)}><img src={send} alt="Send" /></button>
                 </div>
             </div>
         </div>

@@ -67,6 +67,7 @@
   background: #fff;
   border-radius: 10px;
   height: 533px;
+  position: relative;
 }
 
 .chat-box {
@@ -189,6 +190,17 @@ input {
   overflow: visible;
 }
 
+.audio-message-robert {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: auto;
+  height: 60px;
+  padding: 10px 10px 10px 100px;
+  overflow: visible;
+}
+
 .audio-message img {
   position: absolute;
   align-self: last baseline;
@@ -196,6 +208,16 @@ input {
   bottom: -50px;
   z-index: 10;
   width: 148px;
+  height: auto;
+}
+
+.audio-message-robert img {
+  position: absolute;
+  align-self: last baseline;
+  left: -60px;
+  bottom: -40px;
+  z-index: 10;
+  width: 250px;
   height: auto;
 }
 
@@ -229,16 +251,23 @@ input {
 }
 
 .message-box {
-  height: 322px;
-  margin-bottom: 50px;
+  height: auto;
+  max-height: 350px;
+  margin-bottom: 20px;
   position: relative;
   z-index: 11;
+  overflow-y: auto;
+  scroll-behavior: smooth;
 }
 
 .next-buttons {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
 }
 
 .next-buttons button {

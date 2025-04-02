@@ -1,11 +1,14 @@
 import axios from "axios";
 import React, { useEffect, useState, useRef } from "react";
+import send from '../assets/send.svg';
+import back from '../assets/backbutton.svg';
+import lilly from '../assets/lilly.svg';
 
 export default function Lilly() {
     const [messages, setMessages] = useState ([]);
     const [input, setInput] = useState("");
 
-    const API_KEY = process.env.REACT_APP_API_KEY;
+    const API_KEY = import.meta.env.REACT_APP_API_KEY;
 
     const chatBoxRef = useRef(null);
 
@@ -72,12 +75,12 @@ export default function Lilly() {
     return (
         <div className="body-lilly">
             <div className="back-button">
-                <img src="/src/assets/backbutton.svg" alt="Back" />
+                <img src={back} alt="Back" />
                 <h3>Back to map</h3>
             </div>
             <div className="chat-container">
                 <div className="top-message">
-                    <img src="/src/assets/lilly.svg" alt="Lilly" />
+                    <img src={lilly} alt="Lilly" />
                     <h4>My fabulous friend! Any questions for me?</h4>
                 </div>
                 <div className="chat-box" ref={chatBoxRef}>
@@ -104,7 +107,7 @@ export default function Lilly() {
                     onChange={(e) => setInput(e.target.value)}
                     placeholder="Type a message to Lilly..."
                     />
-                    <button onClick={() => sendMessage(input)}><img src="/src/assets/send.svg" alt="Send" /></button>
+                    <button onClick={() => sendMessage(input)}><img src={send} alt="Send" /></button>
                 </div>
             </div>
         </div>
